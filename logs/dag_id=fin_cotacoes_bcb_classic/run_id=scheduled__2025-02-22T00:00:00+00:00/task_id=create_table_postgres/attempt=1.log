@@ -1,0 +1,134 @@
+[2025-07-07T14:25:33.314+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T14:25:33.349+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-07-07T14:25:33.356+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-07-07T14:25:33.356+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T14:25:33.366+0000] {taskinstance.py:2330} INFO - Executing <Task(SQLExecuteQueryOperator): create_table_postgres> on 2025-02-22 00:00:00+00:00
+[2025-07-07T14:25:33.376+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=72890) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T14:25:33.376+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'create_table_postgres', 'scheduled__2025-02-22T00:00:00+00:00', '--job-id', '2075', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmpfncybj5g']
+[2025-07-07T14:25:33.377+0000] {standard_task_runner.py:91} INFO - Job 2075: Subtask create_table_postgres
+[2025-07-07T14:25:33.377+0000] {standard_task_runner.py:63} INFO - Started process 72899 to run task
+[2025-07-07T14:25:33.419+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T14:25:33.497+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='create_table_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-02-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-22T00:00:00+00:00'
+[2025-07-07T14:25:33.498+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T14:25:33.498+0000] {sql.py:276} INFO - Executing: 
+CREATE TABLE IF NOT EXISTS cotacoes (
+    dt_fechamento DATE,
+    cod_moeda TEXT,
+    tipo_moeda TEXT,
+    desc_moeda TEXT,
+    taxa_compra REAL,
+    taxa_venda REAL,
+    paridade_compra REAL,
+    paridade_venda REAL,
+    data_processamento TIMESTAMP,
+    CONSTRAINT table_pk PRIMARY KEY (dt_fechamento, cod_moeda)
+);
+[2025-07-07T14:25:33.505+0000] {base.py:84} INFO - Using connection ID '***-postgres' for task execution.
+[2025-07-07T14:25:33.512+0000] {base.py:84} INFO - Using connection ID '***-postgres' for task execution.
+[2025-07-07T14:25:33.515+0000] {sql.py:487} INFO - Running statement: 
+CREATE TABLE IF NOT EXISTS cotacoes (
+    dt_fechamento DATE,
+    cod_moeda TEXT,
+    tipo_moeda TEXT,
+    desc_moeda TEXT,
+    taxa_compra REAL,
+    taxa_venda REAL,
+    paridade_compra REAL,
+    paridade_venda REAL,
+    data_processamento TIMESTAMP,
+    CONSTRAINT table_pk PRIMARY KEY (dt_fechamento, cod_moeda)
+);, parameters: None
+[2025-07-07T14:25:33.516+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T14:25:33.524+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=create_table_postgres, run_id=scheduled__2025-02-22T00:00:00+00:00, execution_date=20250222T000000, start_date=20250707T142533, end_date=20250707T142533
+[2025-07-07T14:25:33.550+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T14:25:33.569+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-07T14:25:33.570+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-07T14:33:37.849+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T14:33:37.961+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-07-07T14:33:37.996+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-07-07T14:33:37.997+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T14:33:38.068+0000] {taskinstance.py:2330} INFO - Executing <Task(SQLExecuteQueryOperator): create_table_postgres> on 2025-02-22 00:00:00+00:00
+[2025-07-07T14:33:38.094+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=77878) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T14:33:38.100+0000] {standard_task_runner.py:63} INFO - Started process 77949 to run task
+[2025-07-07T14:33:38.117+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'create_table_postgres', 'scheduled__2025-02-22T00:00:00+00:00', '--job-id', '2335', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmprtxlfbhe']
+[2025-07-07T14:33:38.118+0000] {standard_task_runner.py:91} INFO - Job 2335: Subtask create_table_postgres
+[2025-07-07T14:33:38.310+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T14:33:38.598+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='create_table_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-02-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-22T00:00:00+00:00'
+[2025-07-07T14:33:38.600+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T14:33:38.601+0000] {sql.py:276} INFO - Executing: 
+CREATE TABLE IF NOT EXISTS cotacoes (
+    dt_fechamento DATE,
+    cod_moeda TEXT,
+    tipo_moeda TEXT,
+    desc_moeda TEXT,
+    taxa_compra REAL,
+    taxa_venda REAL,
+    paridade_compra REAL,
+    paridade_venda REAL,
+    data_processamento TIMESTAMP,
+    CONSTRAINT table_pk PRIMARY KEY (dt_fechamento, cod_moeda)
+);
+[2025-07-07T14:33:38.629+0000] {base.py:84} INFO - Using connection ID '***-postgres' for task execution.
+[2025-07-07T14:33:38.649+0000] {base.py:84} INFO - Using connection ID '***-postgres' for task execution.
+[2025-07-07T14:33:38.656+0000] {sql.py:487} INFO - Running statement: 
+CREATE TABLE IF NOT EXISTS cotacoes (
+    dt_fechamento DATE,
+    cod_moeda TEXT,
+    tipo_moeda TEXT,
+    desc_moeda TEXT,
+    taxa_compra REAL,
+    taxa_venda REAL,
+    paridade_compra REAL,
+    paridade_venda REAL,
+    data_processamento TIMESTAMP,
+    CONSTRAINT table_pk PRIMARY KEY (dt_fechamento, cod_moeda)
+);, parameters: None
+[2025-07-07T14:33:38.665+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T14:33:38.681+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=create_table_postgres, run_id=scheduled__2025-02-22T00:00:00+00:00, execution_date=20250222T000000, start_date=20250707T143337, end_date=20250707T143338
+[2025-07-07T14:33:38.710+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T14:33:38.735+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-07T15:10:59.919+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T15:11:00.042+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-07-07T15:11:00.070+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-07-07T15:11:00.071+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T15:11:00.155+0000] {taskinstance.py:2330} INFO - Executing <Task(SQLExecuteQueryOperator): create_table_postgres> on 2025-02-22 00:00:00+00:00
+[2025-07-07T15:11:00.188+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'create_table_postgres', 'scheduled__2025-02-22T00:00:00+00:00', '--job-id', '4008', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmp5pxmez0u']
+[2025-07-07T15:11:00.193+0000] {standard_task_runner.py:91} INFO - Job 4008: Subtask create_table_postgres
+[2025-07-07T15:11:00.190+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=102451) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T15:11:00.197+0000] {standard_task_runner.py:63} INFO - Started process 102571 to run task
+[2025-07-07T15:11:00.301+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2025-02-22T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T15:11:00.544+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='create_table_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-02-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-22T00:00:00+00:00'
+[2025-07-07T15:11:00.546+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T15:11:00.546+0000] {sql.py:276} INFO - Executing: 
+CREATE TABLE IF NOT EXISTS cotacoes (
+    dt_fechamento DATE,
+    cod_moeda TEXT,
+    tipo_moeda TEXT,
+    desc_moeda TEXT,
+    taxa_compra REAL,
+    taxa_venda REAL,
+    paridade_compra REAL,
+    paridade_venda REAL,
+    data_processamento TIMESTAMP,
+    CONSTRAINT table_pk PRIMARY KEY (dt_fechamento, cod_moeda)
+);
+[2025-07-07T15:11:00.573+0000] {base.py:84} INFO - Using connection ID '***-postgres' for task execution.
+[2025-07-07T15:11:00.601+0000] {base.py:84} INFO - Using connection ID '***-postgres' for task execution.
+[2025-07-07T15:11:00.606+0000] {sql.py:487} INFO - Running statement: 
+CREATE TABLE IF NOT EXISTS cotacoes (
+    dt_fechamento DATE,
+    cod_moeda TEXT,
+    tipo_moeda TEXT,
+    desc_moeda TEXT,
+    taxa_compra REAL,
+    taxa_venda REAL,
+    paridade_compra REAL,
+    paridade_venda REAL,
+    data_processamento TIMESTAMP,
+    CONSTRAINT table_pk PRIMARY KEY (dt_fechamento, cod_moeda)
+);, parameters: None
+[2025-07-07T15:11:00.612+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T15:11:00.641+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=create_table_postgres, run_id=scheduled__2025-02-22T00:00:00+00:00, execution_date=20250222T000000, start_date=20250707T151100, end_date=20250707T151100
+[2025-07-07T15:11:00.748+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T15:11:00.877+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-07T15:11:00.881+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

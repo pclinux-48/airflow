@@ -1,0 +1,60 @@
+[2025-07-07T13:26:06.724+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T13:26:06.757+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2023-01-07T00:00:00+00:00 [queued]>
+[2025-07-07T13:26:06.767+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2023-01-07T00:00:00+00:00 [queued]>
+[2025-07-07T13:26:06.767+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T13:26:06.783+0000] {taskinstance.py:2330} INFO - Executing <Task(SQLExecuteQueryOperator): create_table_postgres> on 2023-01-07 00:00:00+00:00
+[2025-07-07T13:26:06.790+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'create_table_postgres', 'scheduled__2023-01-07T00:00:00+00:00', '--job-id', '1521', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmpllwh9tmj']
+[2025-07-07T13:26:06.791+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=39858) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T13:26:06.791+0000] {standard_task_runner.py:91} INFO - Job 1521: Subtask create_table_postgres
+[2025-07-07T13:26:06.791+0000] {standard_task_runner.py:63} INFO - Started process 39872 to run task
+[2025-07-07T13:26:06.825+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.create_table_postgres scheduled__2023-01-07T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T13:26:06.892+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='create_table_postgres' AIRFLOW_CTX_EXECUTION_DATE='2023-01-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-07T00:00:00+00:00'
+[2025-07-07T13:26:06.893+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T13:26:06.893+0000] {sql.py:276} INFO - Executing: 
+CREATE TABLE IF NOT EXISTS cotacoes (
+    dt_fechamento DATE,
+    cod_moeda TEXT,
+    tipo_moeda TEXT,
+    desc_moeda TEXT,
+    taxa_compra REAL,
+    taxa_venda REAL,
+    paridade_compra REAL,
+    paridade_venda REAL,
+    data_processamento TIMESTAMP,
+    CONSTRAINT table_pk PRIMARY KEY (dt_fechamento, cod_moeda)
+);
+[2025-07-07T13:26:06.899+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T13:26:06.906+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/common/sql/operators/sql.py", line 277, in execute
+    hook = self.get_db_hook()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/common/sql/operators/sql.py", line 188, in get_db_hook
+    return self._hook
+           ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/functools.py", line 995, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/common/sql/operators/sql.py", line 150, in _hook
+    conn = BaseHook.get_connection(conn_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/hooks/base.py", line 83, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/connection.py", line 519, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `postgres_astro` isn't defined
+[2025-07-07T13:26:06.909+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=fin_cotacoes_bcb_classic, task_id=create_table_postgres, run_id=scheduled__2023-01-07T00:00:00+00:00, execution_date=20230107T000000, start_date=20250707T132606, end_date=20250707T132606
+[2025-07-07T13:26:06.918+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 1521 for task create_table_postgres (The conn_id `postgres_astro` isn't defined; 39872)
+[2025-07-07T13:26:06.965+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-07T13:26:06.994+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-07T13:26:06.995+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

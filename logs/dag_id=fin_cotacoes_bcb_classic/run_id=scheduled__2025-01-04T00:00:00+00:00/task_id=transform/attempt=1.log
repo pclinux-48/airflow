@@ -1,0 +1,99 @@
+[2025-07-06T19:18:31.361+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-06T19:18:31.439+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-07-06T19:18:31.463+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-07-06T19:18:31.463+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-06T19:18:31.580+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2025-01-04 00:00:00+00:00
+[2025-07-06T19:18:31.619+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'transform', 'scheduled__2025-01-04T00:00:00+00:00', '--job-id', '944', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmp1byoeedn']
+[2025-07-06T19:18:31.628+0000] {standard_task_runner.py:91} INFO - Job 944: Subtask transform
+[2025-07-06T19:18:31.624+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=17335) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-06T19:18:31.636+0000] {standard_task_runner.py:63} INFO - Started process 17359 to run task
+[2025-07-06T19:18:31.732+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [running]> on host 20adb53d65c4
+[2025-07-06T19:18:31.925+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2025-01-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-04T00:00:00+00:00'
+[2025-07-06T19:18:31.927+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-06T19:18:31.928+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-06T19:18:31.929+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/cotacoes.py", line 62, in transform
+    cotacoes_csv = kwargs['ti'].xcom_pull(task_id='extract')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TaskInstance.xcom_pull() got an unexpected keyword argument 'task_id'
+[2025-07-06T19:18:31.957+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=fin_cotacoes_bcb_classic, task_id=transform, run_id=scheduled__2025-01-04T00:00:00+00:00, execution_date=20250104T000000, start_date=20250706T191831, end_date=20250706T191831
+[2025-07-06T19:18:31.978+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 944 for task transform (TaskInstance.xcom_pull() got an unexpected keyword argument 'task_id'; 17359)
+[2025-07-06T19:18:32.015+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-06T19:18:32.038+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/models/baseoperator.py:1297 AirflowProviderDeprecationWarning: Call to deprecated class PostgresOperator. (Please use `***.providers.common.sql.operators.sql.SQLExecuteQueryOperator`.Also, you can provide `hook_params={'schema': <database>}`.)
+[2025-07-06T19:18:32.087+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-06T19:18:32.091+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-07T13:52:29.613+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T13:52:29.680+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-07-07T13:52:29.695+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-07-07T13:52:29.695+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T13:52:29.723+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2025-01-04 00:00:00+00:00
+[2025-07-07T13:52:29.738+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'transform', 'scheduled__2025-01-04T00:00:00+00:00', '--job-id', '1687', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmpe0ihjhn7']
+[2025-07-07T13:52:29.739+0000] {standard_task_runner.py:91} INFO - Job 1687: Subtask transform
+[2025-07-07T13:52:29.741+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=54219) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T13:52:29.742+0000] {standard_task_runner.py:63} INFO - Started process 54331 to run task
+[2025-07-07T13:52:29.824+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T13:52:29.963+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2025-01-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-04T00:00:00+00:00'
+[2025-07-07T13:52:29.964+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T13:52:29.984+0000] {cotacoes.py:64} WARNING - Nenhum dado recebido da tarefa de extração. Pulando transformação.
+[2025-07-07T13:52:29.984+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-07T13:52:29.984+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T13:52:30.000+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=transform, run_id=scheduled__2025-01-04T00:00:00+00:00, execution_date=20250104T000000, start_date=20250707T135229, end_date=20250707T135230
+[2025-07-07T13:52:30.076+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T13:52:30.149+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-07T13:52:30.150+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-07T14:01:29.389+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T14:01:29.467+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-07-07T14:01:29.488+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-07-07T14:01:29.488+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T14:01:29.954+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2025-01-04 00:00:00+00:00
+[2025-07-07T14:01:29.979+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=59228) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T14:01:29.980+0000] {standard_task_runner.py:63} INFO - Started process 59307 to run task
+[2025-07-07T14:01:29.991+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'transform', 'scheduled__2025-01-04T00:00:00+00:00', '--job-id', '1776', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmplt7eupqk']
+[2025-07-07T14:01:29.992+0000] {standard_task_runner.py:91} INFO - Job 1776: Subtask transform
+[2025-07-07T14:01:30.113+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T14:01:30.319+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2025-01-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-04T00:00:00+00:00'
+[2025-07-07T14:01:30.320+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T14:01:30.348+0000] {cotacoes.py:63} WARNING - Nenhum dado recebido da tarefa de extração. Pulando transformação.
+[2025-07-07T14:01:30.348+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-07T14:01:30.349+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T14:01:30.365+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=transform, run_id=scheduled__2025-01-04T00:00:00+00:00, execution_date=20250104T000000, start_date=20250707T140129, end_date=20250707T140130
+[2025-07-07T14:01:30.441+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T14:01:30.462+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-07T14:14:46.612+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T14:14:46.694+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-07-07T14:14:46.716+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [queued]>
+[2025-07-07T14:14:46.717+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T14:14:46.767+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2025-01-04 00:00:00+00:00
+[2025-07-07T14:14:46.781+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=66709) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T14:14:46.783+0000] {standard_task_runner.py:63} INFO - Started process 66793 to run task
+[2025-07-07T14:14:46.785+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'transform', 'scheduled__2025-01-04T00:00:00+00:00', '--job-id', '1919', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmp2eiy72f9']
+[2025-07-07T14:14:46.786+0000] {standard_task_runner.py:91} INFO - Job 1919: Subtask transform
+[2025-07-07T14:14:46.940+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.transform scheduled__2025-01-04T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T14:14:47.137+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2025-01-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-04T00:00:00+00:00'
+[2025-07-07T14:14:47.139+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T14:14:47.155+0000] {cotacoes.py:63} WARNING - Nenhum dado recebido da tarefa de extração. Pulando transformação.
+[2025-07-07T14:14:47.156+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-07T14:14:47.156+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T14:14:47.179+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=transform, run_id=scheduled__2025-01-04T00:00:00+00:00, execution_date=20250104T000000, start_date=20250707T141446, end_date=20250707T141447
+[2025-07-07T14:14:47.244+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T14:14:47.288+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-07T14:14:47.289+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

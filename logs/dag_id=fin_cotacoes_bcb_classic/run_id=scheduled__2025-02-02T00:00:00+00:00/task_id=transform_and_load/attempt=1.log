@@ -1,0 +1,38 @@
+[2025-07-07T14:33:25.537+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T14:33:25.634+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform_and_load scheduled__2025-02-02T00:00:00+00:00 [queued]>
+[2025-07-07T14:33:25.669+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform_and_load scheduled__2025-02-02T00:00:00+00:00 [queued]>
+[2025-07-07T14:33:25.670+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T14:33:25.726+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_and_load> on 2025-02-02 00:00:00+00:00
+[2025-07-07T14:33:25.769+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=77642) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T14:33:25.770+0000] {standard_task_runner.py:63} INFO - Started process 77719 to run task
+[2025-07-07T14:33:25.773+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'transform_and_load', 'scheduled__2025-02-02T00:00:00+00:00', '--job-id', '2302', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmplqd2tqav']
+[2025-07-07T14:33:25.775+0000] {standard_task_runner.py:91} INFO - Job 2302: Subtask transform_and_load
+[2025-07-07T14:33:25.890+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.transform_and_load scheduled__2025-02-02T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T14:33:26.085+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2025-02-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-02T00:00:00+00:00'
+[2025-07-07T14:33:26.087+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T14:33:26.124+0000] {cotacoes.py:91} WARNING - Nenhum dado recebido da tarefa de extração. Pulando transformação e carga.
+[2025-07-07T14:33:26.125+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-07T14:33:26.129+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T14:33:26.151+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=transform_and_load, run_id=scheduled__2025-02-02T00:00:00+00:00, execution_date=20250202T000000, start_date=20250707T143325, end_date=20250707T143326
+[2025-07-07T14:33:26.210+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T14:33:26.281+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-07T14:33:26.287+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-07T15:10:45.315+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T15:10:45.449+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform_and_load scheduled__2025-02-02T00:00:00+00:00 [queued]>
+[2025-07-07T15:10:45.499+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.transform_and_load scheduled__2025-02-02T00:00:00+00:00 [queued]>
+[2025-07-07T15:10:45.499+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T15:10:45.564+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_and_load> on 2025-02-02 00:00:00+00:00
+[2025-07-07T15:10:45.609+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=102311) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T15:10:45.610+0000] {standard_task_runner.py:63} INFO - Started process 102365 to run task
+[2025-07-07T15:10:45.607+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'transform_and_load', 'scheduled__2025-02-02T00:00:00+00:00', '--job-id', '3972', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmps85t8b69']
+[2025-07-07T15:10:45.611+0000] {standard_task_runner.py:91} INFO - Job 3972: Subtask transform_and_load
+[2025-07-07T15:10:45.704+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.transform_and_load scheduled__2025-02-02T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T15:10:45.939+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='transform_and_load' AIRFLOW_CTX_EXECUTION_DATE='2025-02-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-02T00:00:00+00:00'
+[2025-07-07T15:10:45.940+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T15:10:45.975+0000] {cotacoes.py:91} WARNING - Nenhum dado recebido da tarefa de extração. Pulando transformação e carga.
+[2025-07-07T15:10:45.976+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-07T15:10:45.976+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T15:10:45.992+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=transform_and_load, run_id=scheduled__2025-02-02T00:00:00+00:00, execution_date=20250202T000000, start_date=20250707T151045, end_date=20250707T151045
+[2025-07-07T15:10:46.041+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T15:10:46.085+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-07T15:10:46.090+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,40 @@
+[2025-07-06T19:07:54.348+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-06T19:07:54.468+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.extract scheduled__2024-08-18T00:00:00+00:00 [queued]>
+[2025-07-06T19:07:54.479+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.extract scheduled__2024-08-18T00:00:00+00:00 [queued]>
+[2025-07-06T19:07:54.479+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-06T19:07:54.502+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract> on 2024-08-18 00:00:00+00:00
+[2025-07-06T19:07:54.523+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=11376) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-06T19:07:54.520+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'extract', 'scheduled__2024-08-18T00:00:00+00:00', '--job-id', '836', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmpq6podlrd']
+[2025-07-06T19:07:54.525+0000] {standard_task_runner.py:91} INFO - Job 836: Subtask extract
+[2025-07-06T19:07:54.525+0000] {standard_task_runner.py:63} INFO - Started process 11405 to run task
+[2025-07-06T19:07:54.653+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.extract scheduled__2024-08-18T00:00:00+00:00 [running]> on host 20adb53d65c4
+[2025-07-06T19:07:54.875+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-08-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-18T00:00:00+00:00'
+[2025-07-06T19:07:54.876+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-06T19:07:54.880+0000] {cotacoes.py:37} INFO - Iniciando extração da URL: https://www4.bcb.gov.br/Download/fechamento/20240818.csv
+[2025-07-06T19:07:55.099+0000] {cotacoes.py:46} ERROR - Erro ao acessar a URL: 404 Client Error: Not Found for url: https://www4.bcb.gov.br/Download/fechamento/20240818.csv
+[2025-07-06T19:07:55.110+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-06T19:07:55.111+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-06T19:07:55.139+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=extract, run_id=scheduled__2024-08-18T00:00:00+00:00, execution_date=20240818T000000, start_date=20250706T190754, end_date=20250706T190755
+[2025-07-06T19:07:55.194+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-06T19:07:55.229+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/models/baseoperator.py:1297 AirflowProviderDeprecationWarning: Call to deprecated class PostgresOperator. (Please use `***.providers.common.sql.operators.sql.SQLExecuteQueryOperator`.Also, you can provide `hook_params={'schema': <database>}`.)
+[2025-07-06T19:07:55.312+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-06T19:07:55.330+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-07T15:07:20.092+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T15:07:20.221+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.extract scheduled__2024-08-18T00:00:00+00:00 [queued]>
+[2025-07-07T15:07:20.232+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fin_cotacoes_bcb_classic.extract scheduled__2024-08-18T00:00:00+00:00 [queued]>
+[2025-07-07T15:07:20.232+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-07T15:07:20.256+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract> on 2024-08-18 00:00:00+00:00
+[2025-07-07T15:07:20.273+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=98875) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T15:07:20.274+0000] {standard_task_runner.py:63} INFO - Started process 98954 to run task
+[2025-07-07T15:07:20.282+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fin_cotacoes_bcb_classic', 'extract', 'scheduled__2024-08-18T00:00:00+00:00', '--job-id', '3440', '--raw', '--subdir', 'DAGS_FOLDER/cotacoes.py', '--cfg-path', '/tmp/tmpkdspk5br']
+[2025-07-07T15:07:20.285+0000] {standard_task_runner.py:91} INFO - Job 3440: Subtask extract
+[2025-07-07T15:07:20.418+0000] {task_command.py:426} INFO - Running <TaskInstance: fin_cotacoes_bcb_classic.extract scheduled__2024-08-18T00:00:00+00:00 [running]> on host bc96ca91d307
+[2025-07-07T15:07:20.763+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fin_cotacoes_bcb_classic' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-08-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-18T00:00:00+00:00'
+[2025-07-07T15:07:20.764+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T15:07:20.765+0000] {cotacoes.py:35} INFO - Iniciando extração da URL: https://www4.bcb.gov.br/Download/fechamento/20240818.csv
+[2025-07-07T15:07:21.122+0000] {cotacoes.py:46} WARNING - Não foi possível extrair dados da URL (pode ser um dia sem cotação): 404 Client Error: Not Found for url: https://www4.bcb.gov.br/Download/fechamento/20240818.csv
+[2025-07-07T15:07:21.127+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-07T15:07:21.128+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T15:07:21.142+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fin_cotacoes_bcb_classic, task_id=extract, run_id=scheduled__2024-08-18T00:00:00+00:00, execution_date=20240818T000000, start_date=20250707T150720, end_date=20250707T150721
+[2025-07-07T15:07:21.193+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-07T15:07:21.230+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
